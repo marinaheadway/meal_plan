@@ -14,7 +14,8 @@ const addMeal=()=> {
   const newMeal={
     title: "Today is ...", 
     id: uuid (), 
-    mealForADay: ""
+    mealForADay: "",
+    ingredients:""
   }
 setMealPlans([newMeal, ...mealPlans])
   console.log ("new meal")
@@ -34,6 +35,10 @@ return mealPlans;
   setMealPlans(updateMeal)
 }
 
+const getActiveMeal =()=> {
+  return mealPlans.find(({id}) => id === selectedDay)
+}
+
   return (
     <div className="App">
    <MyList 
@@ -45,7 +50,7 @@ return mealPlans;
    />
 
    <MyMealsAndIngridients 
-   selectedDay={selectedDay}
+   selectedDay={getActiveMeal()}
    updateDay={updateDay}
    />
 
