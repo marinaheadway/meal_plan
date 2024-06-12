@@ -1,4 +1,4 @@
-const MyMealsAndIngridients =(selectedDay, updateDay) => {
+const MyMealsAndIngridients =({selectedDay, updateDay}) => {
     
     const editMyMeal = (myInput, value)=> {
         updateDay({
@@ -10,7 +10,7 @@ const MyMealsAndIngridients =(selectedDay, updateDay) => {
 if (!selectedDay) return  <p>Plan your week ahead of time!</p>
 
     
-    return (  
+    return ( 
         <div className="whole-plan">
          <input 
            type ="text"
